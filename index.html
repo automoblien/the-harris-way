@@ -3,429 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Harris Way</title>
+  <title>The Harris Way | Premier Transportation & Logistics</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
   <style>
-    /* Global Reset & Styling */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Open Sans', sans-serif; color: #2c3e50; background-color: #f4f6f9; line-height: 1.6; }
+    h1, h2, h3, .logo { font-family: 'Montserrat', sans-serif; }
+    a { text-decoration: none; color: inherit; }
+    
+    .top-bar { background-color: #0d1b2a; color: #a0aec0; font-size: 0.85rem; padding: 0.5rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1b2a4a; }
+    .top-bar-info i { color: #e65c00; margin-right: 0.4rem; }
+    header { background-color: #1b263b; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+    nav { max-width: 1250px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.6rem; font-weight: 800; color: #ffffff; letter-spacing: 1.5px; }
+    .logo span { color: #e65c00; }
+    .nav-menu { display: flex; list-style: none; gap: 2rem; align-items: center; }
+    .nav-menu a { color: #ffffff; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; transition: color 0.3s; }
+    .nav-menu a:hover, .nav-menu a.active { color: #e65c00; }
+    .btn-header { background-color: #e65c00; color: #ffffff !important; padding: 0.6rem 1.2rem; border-radius: 4px; }
 
-    body {
-      font-family: 'Open Sans', sans-serif;
-      color: #2c3e50;
-      background-color: #f4f6f9;
-      line-height: 1.6;
-    }
+    .hero { background: linear-gradient(rgba(13, 27, 42, 0.82), rgba(13, 27, 42, 0.82)), url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #ffffff; padding: 0 1.5rem; }
+    .hero h1 { font-size: 3rem; font-weight: 800; text-transform: uppercase; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; max-width: 800px; margin-bottom: 2rem; color: #e2e8f0; }
+    
+    .section { padding: 4rem 1.5rem; max-width: 1250px; margin: 0 auto; }
+    .section-title { text-align: center; margin-bottom: 3rem; }
+    .section-title h2 { font-size: 2.2rem; color: #0d1b2a; text-transform: uppercase; }
+    .section-title div { width: 70px; height: 4px; background-color: #e65c00; margin: 0.5rem auto 0; }
 
-    h1, h2, h3, h4, .logo {
-      font-family: 'Montserrat', sans-serif;
-    }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .service-card { background: #ffffff; padding: 2.5rem 2rem; border-radius: 6px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-bottom: 3px solid transparent; transition: all 0.3s; }
+    .service-card:hover { transform: translateY(-5px); border-bottom-color: #e65c00; }
+    .service-icon { font-size: 2.5rem; color: #e65c00; margin-bottom: 1rem; }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* Top Utility Bar */
-    .top-bar {
-      background-color: #0d1b2a;
-      color: #a0aec0;
-      font-size: 0.85rem;
-      padding: 0.5rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #1b2a4a;
-    }
-
-    .top-bar-info span {
-      margin-right: 1.5rem;
-    }
-
-    .top-bar-info i {
-      color: #e65c00;
-      margin-right: 0.4rem;
-    }
-
-    .top-bar-links a {
-      color: #ffffff;
-      margin-left: 1rem;
-      font-weight: 600;
-    }
-
-    .top-bar-links a:hover {
-      color: #e65c00;
-    }
-
-    /* Main Navigation Header */
-    header {
-      background-color: #1b263b;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    }
-
-    nav {
-      max-width: 1250px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: #ffffff;
-      letter-spacing: 1.5px;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .logo span {
-      color: #e65c00;
-    }
-
-    .nav-menu {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .nav-menu a {
-      color: #ffffff;
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      transition: color 0.3s ease;
-    }
-
-    .nav-menu a:hover {
-      color: #e65c00;
-    }
-
-    .btn-header {
-      background-color: #e65c00;
-      color: #ffffff !important;
-      padding: 0.6rem 1.2rem;
-      border-radius: 4px;
-      transition: background 0.3s ease;
-    }
-
-    .btn-header:hover {
-      background-color: #c74d00 !important;
-    }
-
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(rgba(13, 27, 42, 0.82), rgba(13, 27, 42, 0.82)), 
-                  url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #ffffff;
-      padding: 0 1.5rem;
-    }
-
-    .hero-content {
-      max-width: 900px;
-    }
-
-    .hero h1 {
-      font-size: 3.2rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      line-height: 1.2;
-      margin-bottom: 1.2rem;
-    }
-
-    .hero p {
-      font-size: 1.25rem;
-      color: #e2e8f0;
-      margin-bottom: 2rem;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      background-color: #e65c00;
-      color: #ffffff;
-      padding: 0.9rem 2rem;
-      font-weight: 700;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: all 0.3s ease;
-    }
-
-    .btn-primary:hover {
-      background-color: #c74d00;
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      background-color: transparent;
-      color: #ffffff;
-      border: 2px solid #ffffff;
-      padding: 0.85rem 2rem;
-      font-weight: 700;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: all 0.3s ease;
-    }
-
-    .btn-secondary:hover {
-      background-color: #ffffff;
-      color: #0d1b2a;
-      transform: translateY(-2px);
-    }
-
-    /* Section Utilities */
-    .section {
-      padding: 5rem 1.5rem;
-      max-width: 1250px;
-      margin: 0 auto;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .section-title h2 {
-      font-size: 2.3rem;
-      color: #0d1b2a;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .section-title div {
-      width: 70px;
-      height: 4px;
-      background-color: #e65c00;
-      margin: 0.5rem auto 0;
-    }
-
-    /* Services Grid */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-    }
-
-    .service-card {
-      background: #ffffff;
-      border-radius: 6px;
-      padding: 2.5rem 2rem;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      border-bottom: 3px solid transparent;
-      transition: all 0.3s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-8px);
-      border-bottom: 3px solid #e65c00;
-      box-shadow: 0 12px 25px rgba(0,0,0,0.1);
-    }
-
-    .service-icon {
-      font-size: 2.5rem;
-      color: #e65c00;
-      margin-bottom: 1.2rem;
-    }
-
-    .service-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.8rem;
-      color: #0d1b2a;
-    }
-
-    .service-card p {
-      color: #64748b;
-      font-size: 0.95rem;
-    }
-
-    /* Drivers Recruitment Banner */
-    .driver-banner {
-      background: linear-gradient(rgba(225, 92, 0, 0.9), rgba(199, 77, 0, 0.9)), 
-                  url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      color: #ffffff;
-      padding: 4rem 1.5rem;
-      text-align: center;
-    }
-
-    .driver-banner h2 {
-      font-size: 2.5rem;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-
-    .driver-banner p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto 2rem;
-    }
-
-    /* Contact & Quote Form Section */
-    .contact-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      background: #ffffff;
-      padding: 3rem;
-      border-radius: 8px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    }
-
-    .contact-info h3 {
-      font-size: 1.8rem;
-      color: #0d1b2a;
-      margin-bottom: 1rem;
-    }
-
-    .contact-info p {
-      color: #64748b;
-      margin-bottom: 2rem;
-    }
-
-    .info-item {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1.2rem;
-    }
-
-    .info-item i {
-      width: 40px;
-      height: 40px;
-      background-color: #fef2e8;
-      color: #e65c00;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 1rem;
-    }
-
-    .form-group {
-      margin-bottom: 1.2rem;
-    }
-
-    .form-group label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-      font-size: 0.9rem;
-    }
-
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      width: 100%;
-      padding: 0.8rem;
-      border: 1px solid #cbd5e1;
-      border-radius: 4px;
-      font-family: inherit;
-      font-size: 0.95rem;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: #e65c00;
-    }
-
-    .btn-submit {
-      width: 100%;
-      background-color: #0d1b2a;
-      color: #ffffff;
-      padding: 0.9rem;
-      border: none;
-      border-radius: 4px;
-      font-weight: 700;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .btn-submit:hover {
-      background-color: #e65c00;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #0a1118;
-      color: #94a3b8;
-      padding: 3rem 1.5rem 1.5rem;
-    }
-
-    .footer-container {
-      max-width: 1250px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .footer-col h4 {
-      color: #ffffff;
-      margin-bottom: 1.2rem;
-      font-size: 1.1rem;
-    }
-
-    .footer-col ul {
-      list-style: none;
-    }
-
-    .footer-col ul li {
-      margin-bottom: 0.6rem;
-    }
-
-    .footer-col ul a:hover {
-      color: #e65c00;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      padding-top: 2rem;
-      border-top: 1px solid #1e293b;
-      font-size: 0.85rem;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 900px) {
-      .contact-container {
-        grid-template-columns: 1fr;
-      }
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-      .nav-menu {
-        display: none;
-      }
-      .top-bar-info span {
-        display: block;
-        margin-bottom: 0.3rem;
-      }
-    }
+    footer { background-color: #0a1118; color: #94a3b8; text-align: center; padding: 2rem; margin-top: 3rem; font-size: 0.9rem; }
   </style>
 </head>
 <body>
@@ -433,163 +45,58 @@
   <div class="top-bar">
     <div class="top-bar-info">
       <span><i class="fa-solid fa-phone"></i> 1-800-555-HARRIS</span>
-      <span><i class="fa-solid fa-envelope"></i> dispatch@theharrisway.com</span>
     </div>
     <div class="top-bar-links">
-      <a href="#drivers"><i class="fa-solid fa-user-plus"></i> Driver Portal</a>
-      <a href="#quote"><i class="fa-solid fa-location-dot"></i> Track Shipment</a>
+      <a href="careers.html"><i class="fa-solid fa-user-plus"></i> Apply Now</a>
     </div>
   </div>
 
   <header>
     <nav>
-      <a href="#" class="logo">
-        <i class="fa-solid fa-truck-moving"></i> THE HARRIS <span>WAY</span>
-      </a>
+      <a href="index.html" class="logo"><i class="fa-solid fa-truck-moving"></i> THE HARRIS <span>WAY</span></a>
       <ul class="nav-menu">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">Company</a></li>
-        <li><a href="#drivers">Careers</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="company.html">Company</a></li>
+        <li><a href="careers.html">Careers</a></li>
         <li><a href="#quote" class="btn-header">Request Quote</a></li>
       </ul>
     </nav>
   </header>
 
   <section class="hero">
-    <div class="hero-content">
-      <h1>Reliable Freight Solutions.<br>Delivered The Right Way.</h1>
-      <p>Nationwide full truckload, regional dedicated, and expedited logistics engineered to keep your business moving forward without delay.</p>
-      <div class="hero-buttons">
-        <a href="#quote" class="btn-primary">Ship With Us</a>
-        <a href="#drivers" class="btn-secondary">Drive For Us</a>
-      </div>
+    <div>
+      <h1>Reliable Freight Solutions</h1>
+      <p>Nationwide full truckload, regional dedicated, and expedited logistics.</p>
+      <a href="careers.html" style="background:#e65c00; color:#fff; padding:0.8rem 1.8rem; border-radius:4px; font-weight:700; display:inline-block;">Drive For Us</a>
     </div>
   </section>
 
-  <section id="services" class="section">
+  <section class="section">
     <div class="section-title">
-      <h2>Transportation & Logistics Solutions</h2>
+      <h2>Transportation Services</h2>
       <div></div>
     </div>
     <div class="services-grid">
       <div class="service-card">
         <div class="service-icon"><i class="fa-solid fa-truck-front"></i></div>
-        <h3>Dry Van Full Truckload</h3>
-        <p>High-capacity, reliable cross-country transportation for general commodities with real-time GPS tracking.</p>
+        <h3>Dry Van Truckload</h3>
+        <p>Reliable cross-country transportation for general freight with full tracking support.</p>
       </div>
       <div class="service-card">
         <div class="service-icon"><i class="fa-solid fa-route"></i></div>
-        <h3>Dedicated Fleets</h3>
-        <p>Custom regional routing with guaranteed driver availability and strict adherence to your delivery schedule.</p>
+        <h3>Dedicated Regional</h3>
+        <p>Customized routes built specifically to support your recurring shipping needs.</p>
       </div>
       <div class="service-card">
         <div class="service-icon"><i class="fa-solid fa-bolt"></i></div>
-        <h3>Expedited Shipping</h3>
-        <p>Priority team-driver service designed for time-sensitive, high-value freight requiring continuous transit.</p>
+        <h3>Expedited Transit</h3>
+        <p>Fast-track freight service reserved for high-priority time-sensitive cargo.</p>
       </div>
-      <div class="service-card">
-        <div class="service-icon"><i class="fa-solid fa-warehouse"></i></div>
-        <h3>3PL & Warehousing</h3>
-        <p>Integrated supply chain management including short-term staging, cross-docking, and distribution solutions.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="drivers" class="driver-banner">
-    <h2>Join The Harris Way Fleet</h2>
-    <p>We respect our drivers. Enjoy top-tier CPM rates, modern equipment, regular home time, and industry-leading health benefits.</p>
-    <a href="#quote" class="btn-secondary">View Driver Positions</a>
-  </section>
-
-  <section id="quote" class="section">
-    <div class="contact-container">
-      <div class="contact-info">
-        <h3>Get A Freight Quote Today</h3>
-        <p>Ready to move your freight? Fill out the quick form and our dispatch team will respond with a custom rate quote within 30 minutes.</p>
-        
-        <div class="info-item">
-          <i class="fa-solid fa-location-dot"></i>
-          <div>
-            <strong>Corporate Headquarters</strong>
-            <p>100 Logistics Blvd, Suite 400</p>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <i class="fa-solid fa-headset"></i>
-          <div>
-            <strong>Direct Dispatch Line</strong>
-            <p>(800) 555-4277</p>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <i class="fa-solid fa-shield-halved"></i>
-          <div>
-            <strong>Safety & Compliance</strong>
-            <p>DOT Compliant | Fully Insured</p>
-          </div>
-        </div>
-      </div>
-
-      <form class="quote-form">
-        <div class="form-group">
-          <label>Full Name</label>
-          <input type="text" placeholder="John Doe" required>
-        </div>
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" placeholder="john@company.com" required>
-        </div>
-        <div class="form-group">
-          <label>Freight Type</label>
-          <select>
-            <option>Dry Van Truckload</option>
-            <option>Dedicated Regional</option>
-            <option>Expedited Freight</option>
-            <option>Driver Application</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Origin & Destination / Message</label>
-          <textarea rows="4" placeholder="e.g., Chicago, IL to Dallas, TX - 40,000 lbs"></textarea>
-        </div>
-        <button type="submit" class="btn-submit">Request Freight Quote</button>
-      </form>
     </div>
   </section>
 
   <footer>
-    <div class="footer-container">
-      <div class="footer-col">
-        <h4>The Harris Way</h4>
-        <p>Driven by integrity, safety, and reliability across North America.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="#">Dry Van Transport</a></li>
-          <li><a href="#">Dedicated Logistics</a></li>
-          <li><a href="#">Expedited Shipping</a></li>
-          <li><a href="#">Cross-Docking</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Careers</h4>
-        <ul>
-          <li><a href="#">Company Drivers</a></li>
-          <li><a href="#">Owner Operators</a></li>
-          <li><a href="#">Office & Dispatch</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <p>Follow us on social media for company news and fleet updates.</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 The Harris Way Transportation & Logistics. All rights reserved.</p>
-    </div>
+    <p>&copy; 2026 The Harris Way Transportation & Logistics. All rights reserved.</p>
   </footer>
 
 </body>
